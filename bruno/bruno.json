@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "PIX QR Code Generator",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

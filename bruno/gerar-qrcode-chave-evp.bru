@@ -1,0 +1,23 @@
+meta {
+  name: Gerar QR Code - Chave EVP
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/pix/gerar
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "chavePix": "123e4567-e89b-12d3-a456-426614174000",
+    "nomeRecebedor": "Carlos Mendes",
+    "cidade": "Belo Horizonte"
+  }
+}

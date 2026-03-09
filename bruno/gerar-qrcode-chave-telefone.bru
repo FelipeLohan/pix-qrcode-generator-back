@@ -1,0 +1,23 @@
+meta {
+  name: Gerar QR Code - Chave Telefone
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/pix/gerar
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "chavePix": "+5511999998888",
+    "nomeRecebedor": "Maria Souza",
+    "cidade": "Curitiba"
+  }
+}
