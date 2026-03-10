@@ -9,6 +9,8 @@ public class PixRequest {
     @NotBlank
     private String chavePix;
 
+    private String tipoChave;
+
     @NotBlank
     private String nomeRecebedor;
 

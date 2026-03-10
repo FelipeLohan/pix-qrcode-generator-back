@@ -25,12 +25,16 @@ public class PixService {
     }
 
     public PixResponse gerar(PixRequest request) {
-        pixKeyValidator.validate(request.getChavePix());
+        String chavePix = "TELEFONE".equals(request.getTipoChave())
+                ? "+55" + request.getChavePix()
+                : request.getChavePix();
+
+        pixKeyValidator.validate(chavePix);
 
         String nome = textSanitizerService.sanitize(request.getNomeRecebedor(), 25);
         String cidade = textSanitizerService.sanitize(request.getCidade(), 15);
 
-        String brCode = brCodeBuilderService.build(request.getChavePix(), nome, cidade);
+        String brCode = brCodeBuilderService.build(chavePix, nome, cidade);
 
         if (brCode.length() > 512) {
             throw new BrCodeTooLongException();
